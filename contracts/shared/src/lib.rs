@@ -21,3 +21,4 @@ pub use types::{
 };
 pub use utils::*;
 pub use upgradeable::*;
+mod fuzz_math;
