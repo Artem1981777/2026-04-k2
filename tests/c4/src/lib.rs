@@ -169,7 +169,7 @@ fn test_submission_validity() {
 
     // Seed liquidity
     let asset_a_token = token::Client::new(&env, &asset_a);
-    let asset_a_mint = token::StellarAssetClient::new(&env, &asset_a);
+    let asset_a_mint = soroban_sdk::token::StellarAssetClient::new(&env, &asset_a);
     asset_a_mint.mint(&liquidity_provider, &LP_SEED);
     let approval_exp = env.ledger().sequence() + 100_000;
     asset_a_token.approve(&liquidity_provider, &router_addr, &LP_SEED, &approval_exp);
