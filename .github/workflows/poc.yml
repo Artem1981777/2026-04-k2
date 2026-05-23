@@ -13,7 +13,9 @@ jobs:
           targets: wasm32v1-none
       - name: Install Stellar CLI
         run: |
-          cargo install --locked stellar-cli --features opt
+          curl -L https://github.com/stellar/stellar-cli/releases/download/v22.8.1/stellar-cli-22.8.1-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv stellar /usr/local/bin/
+          stellar --version
       - name: Build contracts
         run: ./build.sh
       - name: Run PoC
